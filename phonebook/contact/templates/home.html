@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <center>
+    <h2 style="background-color:LightGreen">INSERT CONTACT INFORMATION</h2>
+      <form action="" method="POST" class="post-action">
+          {% csrf_token %}
+          <table border="1">
+              {{ form.as_table }}
+              <tr>
+                  <td>
+                      <input type="submit" value="Save Contact" class="btn btn-info btn-lg">
+                  </td>
+              </tr>
+          </table>
+          <a href="{% url 'show' %}" class="btn btn-link btn-lg" style="background-color:HoneyDew;">Show All Contacts</a>
+      </form>
+  </center>
+</body>
+</html>

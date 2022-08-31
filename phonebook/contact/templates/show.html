@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <center>
+    <h2 style="color:indigo;background-color:LightGreen">ALL CONTACTS</h2>
+      <hr>
+      <table border="6" class="table table-bordered">
+          <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>PhoneNo</th>
+          </tr>
+          {% for p in contact %}
+          <tr>
+        <tbody>
+            <td>{{p.id}}</td>
+            <td>{{p.name}}</td>
+            <td>{{p.email}}</td>
+            <td>{{p.phoneNo}}</td>
+            <td>
+                <a href="/edit/{{p.id}}" class="btn btn-info">Edit</a>&nbsp&nbsp
+                <a href="/delete/{{p.id}}" class="btn btn-danger btn-sm">Delete</a>
+            </td>
+        </tbody>
+            </tr>
+            {% endfor %}
+      </table>
+      <a href="{% url 'home' %}" class="btn btn-link btn-lg" style="background-color:HoneyDew">GO TO INSERT CONTACT INFORMATION</a>
+  </center>
+
+</body>
+</html>

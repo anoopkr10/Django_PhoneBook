@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <center>
+    <h2 style="color:red">EDIT CONTACT INFORMATION</h2>
+      <hr>
+      <form method="POST">
+          {% csrf_token %}
+          <table border="3" class="table table-striped">
+              {{ form.as_table }}
+              <tr>
+                  <td>
+                      <input type="submit" value="Update Contact" action="/edit/{{form.id}}" class="btn btn-primary btn-lg">
+                  </td>
+              </tr>
+          </table>
+      </form>
+  </center>
+</body>
+</html>
